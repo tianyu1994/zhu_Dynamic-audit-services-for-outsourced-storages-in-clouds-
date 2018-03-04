@@ -1,12 +1,13 @@
 import random, math, time, binascii, hashlib
 from charm.toolbox.pairinggroup import ZR, G1, GT, pair
-from toolBox import myToolBox
-from toolBox.head import group, g, blockSize
+import myToolBox
+from head import group, g
 
 class ZhuScheme:
     def __init__(self, blockNum, segNum):
         self._blockNum = blockNum
         self._segmentNum = segNum
+        self._blockSize = segNum * 20 #(a segment size is 20 bytes)
 
         self.clientOmigas = []
         self._tags = []
@@ -39,9 +40,9 @@ class ZhuScheme:
 
         signatures = list()
         for i in range(self._blockNum):
-            f = open('/home/ty/workspace_for_py/AllSchemeTestData/test0', 'rb')
+            f = open('/home/ty/workspace_for_py/AllSchemeTestData/test0', 'rb')# test0 is the test file name
             f.seek(i * blockSize, 0)
-            blockBytes = f.read(blockSize)
+            blockBytes = f.read(self._blockSize)
             f.close()
 
             mi = self.group.init(ZR, 0)
@@ -102,7 +103,7 @@ class ZhuScheme:
             for i in chal.keys():
                 f = open('/home/ty/workspace_for_py/AllSchemeTestData/test0', 'rb')
                 f.seek(i * blockSize, 0)
-                blockBytes = f.read(blockSize)
+                blockBytes = f.read(self._blockSize)
                 f.close()
 
                 mij = blockBytes[20*j:20*(j+1)]
