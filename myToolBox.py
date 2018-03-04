@@ -1,8 +1,4 @@
 import random, string, os, zipfile
-from charm.toolbox.pairinggroup import PairingGroup, ZR, G1, GT, pair
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 def GenRandomSerial(length, Digit=True, Letter=False):
     #生成一个由数字或（和）字符的组成的随机序列
