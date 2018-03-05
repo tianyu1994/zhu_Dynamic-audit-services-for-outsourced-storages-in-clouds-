@@ -1,4 +1,5 @@
 import random, math, time, binascii, hashlib
+import numpy as np
 from charm.toolbox.pairinggroup import ZR, G1, GT, pair
 import myToolBox
 from head import group, g
@@ -31,7 +32,7 @@ class ZhuScheme:
     def TagGen(self):
         us = []
         tau = []
-        self._verInfo = [myToolBox.GenRandomSerial(8) for i in range(self._blockNum)]
+        self._verInfo = np.asarray([myToolBox.GenRandomSerial(8) for i in range(self._blockNum)])
 
         for j in range(self._segmentNum):
             tau.append(self.group.random(ZR))
