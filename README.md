@@ -18,5 +18,7 @@
 
 
 （4）Note: 
+
 (1) The file for testing the algrithms is not provided and its path and name (test0) is used in the algrithms, so please create the file in your projects and change the file path in the funtions('TagGen' and 'Proof') when you run the programs.
-(2) the paper 'p1550-zhu.pdf' describle the protocol in detail.
+
+(2) the paper "p1550-zhu.pdf" describes the protocol in detail.
