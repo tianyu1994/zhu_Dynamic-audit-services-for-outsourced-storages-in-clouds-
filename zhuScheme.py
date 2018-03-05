@@ -40,7 +40,7 @@ class ZhuScheme:
 
         signatures = list()
         for i in range(self._blockNum):
-            f = open('/home/ty/workspace_for_py/AllSchemeTestData/test0', 'rb')# test0 is the test file name
+            f = open('/home/ty/workspace_for_py/AllSchemeTestData/test0', 'rb')# test0 is the name of test file
             f.seek(i * blockSize, 0)
             blockBytes = f.read(self._blockSize)
             f.close()
