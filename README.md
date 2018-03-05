@@ -5,8 +5,11 @@ The protocol for public auditing is implemented on top of Cryptography (PBC) lib
 
 The structure of project file :
 +----head.py
+
  ----myToolBox.py
+ 
  ----zhuScheme.py
+ 
  ----test0 ( not provided, you need to create the file)
 
 Note: 
